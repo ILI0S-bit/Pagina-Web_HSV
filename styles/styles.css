@@ -27,6 +27,7 @@ body {
     background: var(--glass);
     backdrop-filter: blur(10px);
     border-right: 1px solid var(--glass-border);
+    border-radius: 0 20px 0 0;
 }
 
 .main-wrapper {
@@ -137,9 +138,10 @@ body {
 
 .footer-2 {
     background: linear-gradient(180deg, rgb(42, 37, 87) 0%, #120e2b 100%);
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     width: 100%vh;
+    font-size: 10px;
 }
 
 .header { grid-area: header; background: var(--grad-accent-2); }
