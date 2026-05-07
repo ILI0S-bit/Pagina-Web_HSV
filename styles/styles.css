@@ -72,13 +72,21 @@ body {
 
 .content {
     flex: 1;
-    padding: 60px;
+    padding: 0;
+    margin-top: 30px;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.link-text {
+    text-decoration: none;
 }
 
 .tab-content {
     display: none;
     animation: slideUp 0.6s ease forwards;
+    padding: 40px 60px;
 }
 
 .tab-content.active {
@@ -142,6 +150,24 @@ body {
     text-align: center;
     width: 100%vh;
     font-size: 10px;
+}
+
+.link {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    width: fit-content;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 0 0 0 12px;
+    border-left: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .header { grid-area: header; background: var(--grad-accent-2); }
