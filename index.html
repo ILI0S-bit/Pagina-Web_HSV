@@ -1,11 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox y CSS Grid</title>
+    <title>Flex y CSS Grid</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    
+    <div class="main-wrapper">
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-layer-group"></i>
+                <span>Flexbox<br>CSS Grid</span>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item active" onclick="switchTab('flexbox')">
+                    <i class="fas fa-arrows-alt-h"></i> Flexbox
+                </li>
+                <li class="nav-item" onclick="switchTab('grid')">
+                    <i class="fas fa-th"></i> CSS Grid
+                </li>
+            </ul>
+        </nav>
+        <main class="content">
+            <section id="flexbox" class="tab-content active">
+                <h1>Flexbox <small>Unidimensional</small></h1>
+                <p>Ideal para alinear elementos en una sola dirección (fila o columna). Es excelente para menús, barras de navegación y centros de tarjetas.</p>
+        
+                <div class="demo-box flex-container">
+                    <div class="item flex-item-1">1</div>
+                    <div class="item flex-item-2">2</div>
+                    <div class="item flex-item-3">3</div>
+                </div>
+        
+                <div class="controls">
+                    <button onclick="toggleFlexDirection()">Alternar Dirección (Row/Column)</button>
+                </div>
+            </section>
+            <section id="grid" class="tab-content">
+                <h1>CSS Grid <small>Bidimensional</small></h1>
+                <p>Diseñado para controlar filas y columnas simultáneamente. Perfecto para esqueletos completos de sitios web y galerías complejas.</p>
+        
+                <div class="demo-box grid-container">
+                    <div class="item header">Header</div>
+                    <div class="item sidebar-demo">Side</div>
+                    <div class="item main-demo">Main Content</div>
+                    <div class="item extra">Extra</div>
+                    <div class="item footer">Footer</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer-2">
+        <p>Ileana Paola <b>Hurtado Cano</b><br>Sifuentes Almendarez <b>Jose Antonio</b><br>Diego ALejandro <b>Vaca Moreno</b><br>&copy; 2026 Flex y CSS Grid.</p>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function toggleFlexDirection() {
+            const container = document.querySelector('.flex-container');
+            container.classList.toggle('flex-column');
+        }
+    </script>
 </body>
 </html>
